@@ -6,11 +6,13 @@ class CashRegister
     @total = 0
     @discount = discount
     @items = []
+    @last = 0
   end
 
   def add_item(title, price, quantity=1)
     @total += price*quantity
     quantity.times{@items << title}
+    @last = price
   end
 
   def apply_discount
@@ -21,6 +23,9 @@ class CashRegister
       "There is no discount to apply."
     end
   end
+
+  def void_last_transaction
+    
 
 
 end
